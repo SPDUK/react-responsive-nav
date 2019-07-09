@@ -1,6 +1,21 @@
 # react-responsive-nav
 
 
+Styling the navbar fonts:
+```css
+  nav {
+    font-family: 'Open Sans', sans-serif;
+  }
+  nav h1 {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 800;
+  }
+```
+Or select whichever fonts and styles you like.
+
+___
+
+
 # Development
 
 `npm install` to install dev deps
@@ -14,3 +29,5 @@ Create a new example app with create-react-app, then run `npm link react-respons
 
 
 Run `npm run start` to begin watching changes during development, then in the secondary project (created with CRA) you can also run `npm run start` there, when you make changes you'll have hot reloading for both.
+
+
