@@ -10,6 +10,7 @@
 `npm build` to build and update the deployed module
 
 
-Create a new example app with create-react-app, then run `npm link react-responsive-nav`, from there you can import it and use it like any other module `import ReactResponsiveNav from "react-responsive-nav"`.
+Create a new example app with create-react-app, then run `npm link react-responsive-nav`, from there you can import it and use it like any other module `import { Navbar } from "react-responsive-nav"`.
 
 
+Run `npm run start` to begin watching changes during development, then in the secondary project (created with CRA) you can also run `npm run start` there, when you make changes you'll have hot reloading for both.
