@@ -1,0 +1,31 @@
+{
+  "name": "react-responsive-nav",
+  "version": "0.0.1",
+  "description": "A responsive react navbar in the style of stripe.com",
+  "main": "build/index.js",
+  "peerDependencies": {
+    "react": "^16.8.6"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "webpack": "^4.35.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "author": {
+    "name": "spduk",
+    "email": "spdevuk@gmail.com"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.2",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.5.2",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "webpack-cli": "^3.3.5"
+  }
+}
