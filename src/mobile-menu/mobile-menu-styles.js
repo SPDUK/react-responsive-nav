@@ -85,7 +85,6 @@ export const StyledModal = styled(ReactModalAdapter)`
     background-color: rgba(255, 255, 255, 0);
     z-index: 99999;
     height: 100%;
-    overflow-y: scroll;
     opacity: 0;
     transform: scale(0.95) translate(15px, -15px);
     &.ReactModal__Overlay--after-open {
