@@ -46,7 +46,7 @@ export const StyledClose = styled.a`
   &:after {
     position: absolute;
     right: 20px;
-    top: 5px;
+    top: 10px;
     content: ' ';
     height: 24px;
     width: 4px;
@@ -93,7 +93,7 @@ export const StyledModal = styled(ReactModalAdapter)`
     left: 10px;
     right: 10px;
     overflow-y: auto;
-    height: 90%;
+    max-height: 90%;
     transition: 0.2s ease-out;
     background: #fff;
     border-radius: 4px;
@@ -139,7 +139,7 @@ export const StyledPrimaryLink = styled.aside`
 `;
 
 export const StyledPrimaryLinks = styled.div`
-  padding: 20px 30px;
+  padding: 20px 30px 0px 30px;
   display: flex;
   flex-direction: column;
   border-bottom: 2px solid rgb(246, 249, 252);
@@ -155,12 +155,28 @@ export const StyledPrimaryLinks = styled.div`
       margin-right: 10px;
     }
   }
+  @media (min-width: 350px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(100% - 60px);
+    aside {
+      flex: 50%;
+    }
+  }
 `;
 export const StyledMobileLinks = styled.div`
   padding: 10px 30px;
   display: flex;
   flex-direction: column;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 40px;
+  @media (min-width: 360px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(100% - 60px);
+    aside {
+      flex: 50%;
+    }
+  }
 `;
