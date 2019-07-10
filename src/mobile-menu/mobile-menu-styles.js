@@ -76,6 +76,7 @@ function ReactModalAdapter({ className, ...props }) {
 
 export const StyledModal = styled(ReactModalAdapter)`
   &__overlay {
+    transition: 0.15s ease-out;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -85,6 +86,16 @@ export const StyledModal = styled(ReactModalAdapter)`
     z-index: 99999;
     height: 100%;
     overflow-y: scroll;
+    opacity: 0;
+    transform: scale(0.95) translate(15px, -15px);
+    &.ReactModal__Overlay--after-open {
+      opacity: 1;
+      transform: scale(1) translate(0px, 0px);
+    }
+    &.ReactModal__Overlay--before-close {
+      transform: scale(0.95) translate(15px, -15px);
+      opacity: 0;
+    }
   }
 
   &__content {

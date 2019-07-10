@@ -69,6 +69,7 @@ class MobileMenu extends Component {
           contentLabel="Example Modal"
           className="Modal"
           modalClassname="Overlay"
+          closeTimeoutMS={150}
         >
           <StyledClose onClick={this.closeModal} />
           <header>{primaryDropdown.title}</header>
