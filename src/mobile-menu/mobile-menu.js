@@ -8,7 +8,8 @@ import {
   StyledModal,
   StyledClose,
   StyledPrimaryLinks,
-  UnstyledButton
+  StyledPrimaryLink,
+  StyledMobileLinks
 } from './mobile-menu-styles';
 
 const history = createBrowserHistory();
@@ -40,10 +41,19 @@ class MobileMenu extends Component {
   createPrimaryLink = ({ link, icon, color }) => {
     const { href, to } = link.props;
     return (
-      <UnstyledButton key={Math.random()} onClick={() => this.handleLinkClick(href, to)}>
+      <StyledPrimaryLink key={Math.random()} onClick={() => this.handleLinkClick(href, to)}>
         <img src={icon} alt={icon} />
         {link}
-      </UnstyledButton>
+      </StyledPrimaryLink>
+    );
+  };
+
+  createMobileLink = link => {
+    const { href, to } = link.props;
+    return (
+      <StyledPrimaryLink onClick={() => this.handleLinkClick(href, to)} key={Math.random()}>
+        {link}
+      </StyledPrimaryLink>
     );
   };
 
@@ -65,6 +75,8 @@ class MobileMenu extends Component {
           <StyledPrimaryLinks>
             {primaryDropdown.links.map(this.createPrimaryLink)}
           </StyledPrimaryLinks>
+          <StyledMobileLinks>{mobileLinks.map(this.createMobileLink)}</StyledMobileLinks>
+          <footer>{authLink}</footer>
         </StyledModal>
         <StyledMobileMenu onClick={this.openModal}>
           <span />
