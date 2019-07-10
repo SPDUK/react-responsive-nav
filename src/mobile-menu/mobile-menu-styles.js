@@ -27,6 +27,9 @@ export const StyledMobileMenu = styled.button`
       margin-top: 6px;
     }
   }
+  @media (min-width: 670px) {
+    display: none;
+  }
 `;
 
 export const StyledClose = styled.a`
