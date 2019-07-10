@@ -31,6 +31,38 @@ export const StyledMobileMenu = styled.button`
   }
 `;
 
+export const StyledClose = styled.a`
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  &:hover {
+    &:before,
+    &:after {
+      background-color: #424770;
+    }
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    content: ' ';
+    height: 24px;
+    width: 4px;
+    background-color: #6772e5;
+    border-radius: 4px;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+`;
+
 function ReactModalAdapter({ className, ...props }) {
   const contentClassName = `${className}__content`;
   const overlayClassName = `${className}__overlay`;
@@ -57,17 +89,41 @@ export const StyledModal = styled(ReactModalAdapter)`
 
   &__content {
     position: absolute;
-    top: 40px;
-    left: 40px;
-    right: 40px;
-    bottom: 40px;
-    border: 1px solid #ccc;
-    background: #fff;
+    top: 10px;
+    left: 10px;
+    right: 10px;
     overflow: auto;
+    transition: 0.2s ease-out;
+    background: #fff;
+    height: 300px;
+    border-radius: 4px;
+    padding: 20px 30px;
     -webkit-overflow-scrolling: touch;
-    borderradius: 4px;
     outline: none;
-    padding: 20px;
     z-index: 999999;
+    -webkit-box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25),
+      0 30px 60px -30px rgba(0, 0, 0, 0.3), 0 -18px 60px -10px rgba(0, 0, 0, 0.025);
+    box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3),
+      0 -18px 60px -10px rgba(0, 0, 0, 0.025);
+
+    header {
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #8898aa;
+      font-size: 13px;
+    }
   }
+`;
+
+export const UnstyledButton = styled.button`
+  padding: 0;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background: none;
+`;
+
+export const StyledPrimaryLinks = styled.div`
+  display: flex;
 `;
