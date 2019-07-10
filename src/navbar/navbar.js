@@ -29,13 +29,11 @@ class Navbar extends Component {
 }
 
 const linkWithoutIconProps = {
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired
+  link: PropTypes.object
 };
 const linkProps = {
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired
+  link: PropTypes.object,
+  icon: PropTypes.string
 };
 
 Navbar.propTypes = {
@@ -50,10 +48,10 @@ Navbar.propTypes = {
     primaryLink: PropTypes.shape({
       ...linkProps,
       subtitle: PropTypes.string.isRequired
-    }),
+    }).isRequired,
     firstColumn: PropTypes.shape({
       title: PropTypes.string.isRequired,
-      links: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps))
+      links: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps)).isRequired
     }).isRequired,
     secondColumn: PropTypes.shape({
       title: PropTypes.string.isRequired,
@@ -69,8 +67,7 @@ Navbar.propTypes = {
   }),
   links: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps)).isRequired,
   authLink: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired
+    link: PropTypes.object
   }).isRequired,
   mobileLinks: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps)).isRequired
 };
