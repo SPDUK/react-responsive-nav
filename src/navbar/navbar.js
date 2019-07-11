@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { StyledNav } from './navbar-styles';
 import MobileMenu from '../mobile-menu/mobile-menu';
 import DesktopNav, { ContentGroup } from '../desktop-nav/desktop-nav';
+import PrimaryDropdown from '../desktop-nav/primary-dropdown';
 
 class Navbar extends Component {
   render() {
@@ -52,10 +53,8 @@ class Navbar extends Component {
           breakpoint={breakpoint}
           debug={debug}
         >
-          <ContentGroup title="About" height="200">
-            <ul>
-              <li>Another list item</li>
-            </ul>
+          <ContentGroup title={primaryDropdown.title} height="619" width="495">
+            <PrimaryDropdown primaryDropdown={primaryDropdown} />
           </ContentGroup>
           <ContentGroup title="About" height="200">
             <ul>
