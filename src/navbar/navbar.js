@@ -14,7 +14,19 @@ class Navbar extends Component {
       iconDropdown,
       links,
       authLink,
-      mobileLinks
+      mobileLinks,
+      align,
+      columnWidth,
+      rowHeight,
+      background,
+      color,
+      fontSize,
+      fontFamily,
+      contentBackground,
+      contentColor,
+      contentTop,
+      breakpoint,
+      debug
     } = this.props;
     return (
       <>
@@ -26,7 +38,20 @@ class Navbar extends Component {
             authLink={authLink}
           />
         </StyledNav>
-        <DesktopNav>
+        <DesktopNav
+          align={align}
+          columnWidth={columnWidth}
+          rowHeight={rowHeight}
+          background={background}
+          color={color}
+          fontSize={fontSize}
+          fontFamily={fontFamily}
+          contentBackground={contentBackground}
+          contentColor={contentColor}
+          contentTop={contentTop}
+          breakpoint={breakpoint}
+          debug={debug}
+        >
           <ContentGroup title="About" height="200">
             <ul>
               <li>Another list item</li>
@@ -109,7 +134,19 @@ Navbar.propTypes = {
   authLink: PropTypes.shape({
     link: PropTypes.object
   }).isRequired,
-  mobileLinks: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps)).isRequired
+  mobileLinks: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps)).isRequired,
+  align: PropTypes.string,
+  columnWidth: PropTypes.string,
+  rowHeight: PropTypes.string,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  fontSize: PropTypes.string,
+  fontFamily: PropTypes.string,
+  contentBackground: PropTypes.string,
+  contentColor: PropTypes.string,
+  contentTop: PropTypes.string,
+  breakpoint: PropTypes.string,
+  debug: PropTypes.bool
 };
 
 export default Navbar;
