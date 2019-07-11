@@ -5,6 +5,7 @@ import { StyledNav } from './navbar-styles';
 import MobileMenu from '../mobile-menu/mobile-menu';
 import DesktopNav, { ContentGroup } from '../desktop-nav/desktop-nav';
 import PrimaryDropdown from '../desktop-nav/primary-dropdown';
+import ColumnDropdown from '../desktop-nav/column-dropdown';
 
 class Navbar extends Component {
   render() {
@@ -53,14 +54,11 @@ class Navbar extends Component {
           breakpoint={breakpoint}
           debug={debug}
         >
-          <ContentGroup title={primaryDropdown.title} height="619" width="495">
+          <ContentGroup title={primaryDropdown.title} height="630" width="495">
             <PrimaryDropdown primaryDropdown={primaryDropdown} />
           </ContentGroup>
-          <ContentGroup title="About" height="200">
-            <ul>
-              <li>Another list item</li>
-              <li>Another list item</li>
-            </ul>
+          <ContentGroup title={columnDropdown.title} height="408" width="400">
+            <ColumnDropdown columnDropdown={columnDropdown} />
           </ContentGroup>
           <ContentGroup title="About" height="200">
             <ul>
