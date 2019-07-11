@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { StyledNav } from './navbar-styles';
 import MobileMenu from '../mobile-menu/mobile-menu';
+import DesktopNav, { ContentGroup } from '../desktop-nav/desktop-nav';
 
 class Navbar extends Component {
   render() {
@@ -16,14 +17,53 @@ class Navbar extends Component {
       mobileLinks
     } = this.props;
     return (
-      <StyledNav>
-        <h1>{logo}</h1>
-        <MobileMenu
-          primaryDropdown={primaryDropdown}
-          mobileLinks={mobileLinks}
-          authLink={authLink}
-        />
-      </StyledNav>
+      <>
+        <StyledNav>
+          <h1>{logo}</h1>
+          <MobileMenu
+            primaryDropdown={primaryDropdown}
+            mobileLinks={mobileLinks}
+            authLink={authLink}
+          />
+        </StyledNav>
+        <DesktopNav>
+          <ContentGroup title="About" height="200">
+            <ul>
+              <li>Another list item</li>
+            </ul>
+          </ContentGroup>
+          <ContentGroup title="About" height="200">
+            <ul>
+              <li>Another list item</li>
+              <li>Another list item</li>
+            </ul>
+          </ContentGroup>
+          <ContentGroup title="About" height="200">
+            <ul>
+              <li>Another list item</li>
+              <li>Another list item</li>
+              <li>Another list item</li>
+            </ul>
+          </ContentGroup>
+          <ContentGroup title="About" height="200">
+            <ul>
+              <li>Another list item</li>
+              <li>Another list item</li>
+              <li>Another list item</li>
+              <li>Another list item</li>
+              <li>Another list item</li>
+              <li>Another list item</li>
+            </ul>
+          </ContentGroup>
+          <ContentGroup title="Contact" height="200">
+            <ul>
+              <li>Another list item</li>
+              <li>Another list item</li>
+              <li>Another list item</li>
+            </ul>
+          </ContentGroup>
+        </DesktopNav>
+      </>
     );
   }
 }
