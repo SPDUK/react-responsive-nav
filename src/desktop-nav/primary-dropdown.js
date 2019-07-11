@@ -5,6 +5,7 @@ import { ContentGroup } from './desktop-nav';
 
 const StyledPrimaryDropdown = styled.div`
   height: 100%;
+  padding-top: 10px;
   span {
     font-size: 14px;
     color: rgb(107, 124, 147);
