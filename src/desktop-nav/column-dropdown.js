@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { ContentGroup } from './desktop-nav';
+import handleLinkClick from '../lib/handleLinkClick';
 
 const StyledColumnDropdown = styled.div`
   height: 100%;
@@ -42,18 +42,10 @@ const StyledPrimaryLink = styled.aside`
   }
 `;
 
-const StyledPrimaryLinks = styled.div`
-  padding: 20px 30px 0px 30px;
-  display: flex;
-  flex-direction: column;
-  font-size: 19px;
-  font-weight: 600;
-`;
-
 const createPrimaryDropdownLink = ({ link, icon, subtitle }) => {
   const { href, to } = link.props;
   return (
-    <StyledPrimaryLink key={Math.random()} onClick={() => this.handleLinkClick(href, to)}>
+    <StyledPrimaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={icon} />
       <div>
         <h4>{link}</h4>
@@ -84,7 +76,7 @@ const StyledFooter = styled.div`
 const createFooterLink = ({ link, icon }) => {
   const { href, to } = link.props;
   return (
-    <StyledPrimaryLink key={Math.random()} onClick={() => this.handleLinkClick(href, to)}>
+    <StyledPrimaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={icon} />
       <div>
         <h4>{link}</h4>
@@ -128,9 +120,9 @@ const createColumnLink = link => {
       type="link"
       role="link"
       tabIndex={-1}
-      onKeyPress={() => this.handleLinkClick(href, to)}
+      onKeyPress={() => handleLinkClick(href, to)}
       key={Math.random()}
-      onClick={() => this.handleLinkClick(href, to)}
+      onClick={() => handleLinkClick(href, to)}
     >
       {link}
     </div>

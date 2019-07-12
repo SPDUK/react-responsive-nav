@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import handleLinkClick from '../lib/handleLinkClick';
 
 const StyledPrimaryDropdown = styled.div`
   height: 100%;

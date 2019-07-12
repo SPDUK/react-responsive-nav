@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { ContentGroup } from './desktop-nav';
+import handleLinkClick from '../lib/handleLinkClick';
 
 const StyledPrimaryDropdown = styled.div`
   height: 100%;
@@ -52,7 +52,7 @@ const StyledPrimaryLinks = styled.div`
 const createPrimaryLink = ({ link, icon, color, text }) => {
   const { href, to } = link.props;
   return (
-    <StyledPrimaryLink key={Math.random()} onClick={() => this.handleLinkClick(href, to)}>
+    <StyledPrimaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={icon} />
       <div>
         <h4>{link}</h4>
@@ -86,6 +86,9 @@ const StyledSecondaryLink = styled.div`
     font-size: 16px;
     margin: 0px 10px;
   }
+  span {
+    padding-top: 2px;
+  }
 `;
 
 const StyledFooter = styled.div`
@@ -107,7 +110,7 @@ const StyledFooter = styled.div`
 const createSecondaryLink = ({ link, icon, color, text }) => {
   const { href, to } = link.props;
   return (
-    <StyledSecondaryLink key={Math.random()} onClick={() => this.handleLinkClick(href, to)}>
+    <StyledSecondaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={icon} />
       <h5>{link}</h5>
       <span>{text}</span>

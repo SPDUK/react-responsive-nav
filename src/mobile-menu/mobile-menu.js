@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
-import { createBrowserHistory } from 'history';
+import handleLinkClick from '../lib/handleLinkClick';
 
 import {
   StyledMobileMenu,
@@ -11,8 +11,6 @@ import {
   StyledPrimaryLink,
   StyledMobileLinks
 } from './mobile-menu-styles';
-
-const history = createBrowserHistory();
 
 Modal.setAppElement('#root');
 
@@ -31,17 +29,10 @@ class MobileMenu extends Component {
     this.setState({ modalIsOpen: false });
   };
 
-  // if an anchor tag is uses, redirect on click
-  // else push to history so we use react router
-  handleLinkClick = (href, to) => {
-    if (href) window.location.href = href;
-    else history.push(to);
-  };
-
   createPrimaryLink = ({ link, icon, color }) => {
     const { href, to } = link.props;
     return (
-      <StyledPrimaryLink key={Math.random()} onClick={() => this.handleLinkClick(href, to)}>
+      <StyledPrimaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
         <img src={icon} alt={icon} />
         {link}
       </StyledPrimaryLink>
@@ -51,7 +42,7 @@ class MobileMenu extends Component {
   createMobileLink = link => {
     const { href, to } = link.props;
     return (
-      <StyledPrimaryLink onClick={() => this.handleLinkClick(href, to)} key={Math.random()}>
+      <StyledPrimaryLink onClick={() => handleLinkClick(href, to)} key={Math.random()}>
         {link}
       </StyledPrimaryLink>
     );
