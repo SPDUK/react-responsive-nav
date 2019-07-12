@@ -63,32 +63,6 @@ const createPrimaryDropdownLink = ({ link, icon, subtitle }) => {
   );
 };
 
-const StyledSecondaryLinks = styled.div`
-  padding: 20px 30px 0px 30px;
-  display: flex;
-  flex-direction: column;
-  font-size: 19px;
-  font-weight: 600;
-  background-color: rgb(246, 249, 252);
-  border-bottom: 2px solid #fff;
-`;
-
-const StyledSecondaryLink = styled.div`
-  display: flex;
-  height: 50px;
-  flex-direction: row;
-  font-size: 19px;
-  font-weight: 600;
-  img {
-    width: 24px;
-    height: 24px;
-  }
-  h5 {
-    font-size: 16px;
-    margin: 0px 10px;
-  }
-`;
-
 const StyledFooter = styled.div`
   display: flex;
   flex-direction: column;
@@ -147,14 +121,19 @@ const StyledLinks = styled.div`
   padding: 20px 30px;
 `;
 
-const createSecondaryLink = ({ link, icon, color, text }) => {
+const createColumnLink = link => {
   const { href, to } = link.props;
   return (
-    <StyledSecondaryLink key={Math.random()} onClick={() => this.handleLinkClick(href, to)}>
-      <img src={icon} alt={icon} />
-      <h5>{link}</h5>
-      <span>{text}</span>
-    </StyledSecondaryLink>
+    <div
+      type="link"
+      role="link"
+      tabIndex={-1}
+      onKeyDown={() => this.handleLinkClick(href, to)}
+      key={Math.random()}
+      onClick={() => this.handleLinkClick(href, to)}
+    >
+      {link}
+    </div>
   );
 };
 
@@ -167,11 +146,11 @@ const ColumnDropdown = ({
       <StyledColumnDropdownColumns>
         <StyledColumnDropdownColumn>
           <span>{firstColumn.title}</span>
-          {firstColumn.links.map(link => link)}
+          {firstColumn.links.map(createColumnLink)}
         </StyledColumnDropdownColumn>
         <StyledColumnDropdownColumn>
           <span>{secondColumn.title}</span>
-          {secondColumn.links.map(link => link)}
+          {secondColumn.links.map(createColumnLink)}
         </StyledColumnDropdownColumn>
       </StyledColumnDropdownColumns>
     </StyledLinks>
