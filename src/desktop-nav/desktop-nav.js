@@ -6,7 +6,7 @@ import kebabCase from 'lodash.kebabcase';
 const defaultRootAlign = 'center';
 const defaultColor = '#fff';
 const defaultColumnWidth = 80;
-const defaultRowHeight = 35;
+const defaultRowHeight = 45;
 const defaultBackground = 'rgba(0,0,0,0)';
 const defaultBreakpoint = 670;
 const defaultContentBackground = '#fff';
@@ -132,7 +132,7 @@ const MovingDiv = styled.div`
   ${setFromProps('color')};
   ${setFromProps('background')};
   position: absolute;
-  top: ${({ top }) => top + 8}px;
+  top: ${({ top }) => top}px;
   left: ${({ fromData }) => (fromData ? fromData.left : 0)}px;
   width: ${({ fromData }) => (fromData ? fromData.width : 0)}px;
   height: ${({ fromData }) => (fromData ? fromData.height : 0)}px;
@@ -196,7 +196,7 @@ const MoveArrow = (fromData, toData, leftOffset, rightOffset) => keyframes`
   }
 `;
 const Arrow = styled.div`
-  top: -${({ top }) => arrowHeight - top - 10}px;
+  top: -${({ top }) => arrowHeight - top}px;
   z-index: 1;
   position: absolute;
   ${({ toData, leftOffset, rightOffset }) =>

@@ -7,7 +7,7 @@ export const StyledMobileMenu = styled.button`
   background: none;
   outline: none;
   border: none;
-  height: 50px;
+  height: 60px;
   width: 49px;
   user-select: none;
   position: relative;

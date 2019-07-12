@@ -10,11 +10,11 @@ export const StyledNav = styled.nav`
   left: 0;
   position: absolute;
   z-index: 9999;
-  height: 50px;
+  height: 60px;
   h1 {
     margin: 0 0 0 20px;
     width: 62px;
     color: #fff;
-    line-height: 50px;
+    line-height: 60px;
   }
 `;
