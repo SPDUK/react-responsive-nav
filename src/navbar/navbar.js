@@ -58,7 +58,7 @@ class Navbar extends Component {
           <ContentGroup title={primaryDropdown.title} height="630" width="495">
             <PrimaryDropdown primaryDropdown={primaryDropdown} />
           </ContentGroup>
-          <ContentGroup title={columnDropdown.title} height="408" width="400">
+          <ContentGroup title={columnDropdown.title} height="408" width="440">
             <ColumnDropdown columnDropdown={columnDropdown} />
           </ContentGroup>
           <ContentGroup title={iconDropdown.title} height="442" width="420">

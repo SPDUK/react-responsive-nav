@@ -16,14 +16,14 @@ const defaultContentHeight = 200;
 const defaultContentTop = 0;
 
 const arrowHeight = 8;
-const perspective = 850;
+const perspective = 4000;
 
 const fadeOutSeconds = 0.34;
 const fadeInSeconds = 0.25;
 const moveSeconds = 0.25;
-const moveArrowSeconds = 0.28;
-const fadeOutContentSeconds = 0.29;
-const fadeInContentSeconds = 0.1;
+const moveArrowSeconds = 0.25;
+const fadeOutContentSeconds = 0.3;
+const fadeInContentSeconds = 0.35;
 const OffScreenPadding = 10;
 
 const setFromProps = camelCaseKey => css`
@@ -85,13 +85,16 @@ const ContentRow = styled.div`
   height: 0;
 `;
 const Move = (fromData, toData) => keyframes`
-  from {
+  0% {
     left: ${fromData.left}px;
     width: ${fromData.width}px;
     height: ${fromData.height}px;
   }
+  50% {
+    width: ${toData.width}px; 
+  }
   
-  to {
+  100% {
     left: ${toData.left}px;
     width: ${toData.width}px;
     height: ${toData.height}px;
@@ -100,7 +103,7 @@ const Move = (fromData, toData) => keyframes`
 const FadeIn = keyframes`
   from {
     opacity: 0;
-    transform: perspective(${perspective}px) rotateX(-60deg);
+    transform: perspective(${perspective}px) rotateX(-15deg);
     transform-origin: top center;
   }
   
@@ -111,16 +114,16 @@ const FadeIn = keyframes`
   }
 `;
 const FadeOut = keyframes`
-  from {
+  0% {
     opacity: 1;
     transform: perspective(${perspective}px) rotateX(0deg);
     transform-origin: top center;
   }
   
-  to {
+  100% {
     opacity: 0;
-    transform: perspective(${perspective}px) rotateX(-60deg);
     transform-origin: top center;
+    transform: perspective(${perspective}px) rotateX(-15deg);
     visibility: hidden;
   }
 `;
@@ -129,7 +132,7 @@ const MovingDiv = styled.div`
   ${setFromProps('color')};
   ${setFromProps('background')};
   position: absolute;
-  top: ${({ top }) => top}px;
+  top: ${({ top }) => top + 8}px;
   left: ${({ fromData }) => (fromData ? fromData.left : 0)}px;
   width: ${({ fromData }) => (fromData ? fromData.width : 0)}px;
   height: ${({ fromData }) => (fromData ? fromData.height : 0)}px;
@@ -193,7 +196,7 @@ const MoveArrow = (fromData, toData, leftOffset, rightOffset) => keyframes`
   }
 `;
 const Arrow = styled.div`
-  top: -${({ top }) => arrowHeight - top}px;
+  top: -${({ top }) => arrowHeight - top - 10}px;
   z-index: 1;
   position: absolute;
   ${({ toData, leftOffset, rightOffset }) =>
