@@ -128,7 +128,7 @@ const createColumnLink = link => {
       type="link"
       role="link"
       tabIndex={-1}
-      onKeyDown={() => this.handleLinkClick(href, to)}
+      onKeyPress={() => this.handleLinkClick(href, to)}
       key={Math.random()}
       onClick={() => this.handleLinkClick(href, to)}
     >
