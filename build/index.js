@@ -708,7 +708,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nav
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! history */ \"./node_modules/history/esm/history.js\");\n\nvar history = Object(history__WEBPACK_IMPORTED_MODULE_0__[\"createBrowserHistory\"])(); // if an anchor tag is uses, redirect on click\n// else push to history so we use react router\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (href, to) {\n  if (!href || !to) throw new ReferenceError(\"No href found for this link: href: \".concat(href, \" to:\").concat(to));\n  if (href) window.location.href = href;else history.push(to);\n});\n\n//# sourceURL=webpack:///./src/lib/handleLinkClick.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var history__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! history */ \"./node_modules/history/esm/history.js\");\n\nvar history = Object(history__WEBPACK_IMPORTED_MODULE_0__[\"createBrowserHistory\"])(); // if an anchor tag is uses, redirect on click\n// else push to history so we use react router\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (href, to) {\n  if (!href && !to) throw new ReferenceError(\"No href found for this link: href: \".concat(href, \" to:\").concat(to));\n  if (href) window.location.href = href;else history.push(to);\n});\n\n//# sourceURL=webpack:///./src/lib/handleLinkClick.js?");
 
 /***/ }),
 
