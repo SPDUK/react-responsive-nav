@@ -64,23 +64,6 @@ class Navbar extends Component {
           <ContentGroup title={iconDropdown.title} height="442" width="420">
             <IconDropdown iconDropdown={iconDropdown} />
           </ContentGroup>
-          <ContentGroup title="About" height="200">
-            <ul>
-              <li>Another list item</li>
-              <li>Another list item</li>
-              <li>Another list item</li>
-              <li>Another list item</li>
-              <li>Another list item</li>
-              <li>Another list item</li>
-            </ul>
-          </ContentGroup>
-          <ContentGroup title="Contact" height="200">
-            <ul>
-              <li>Another list item</li>
-              <li>Another list item</li>
-              <li>Another list item</li>
-            </ul>
-          </ContentGroup>
         </DesktopNav>
       </>
     );
