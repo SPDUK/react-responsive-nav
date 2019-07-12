@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
-import handleLinkClick from '../lib/handleLinkClick';
+import handleLinkClick from '../../lib/handleLinkClick';
 
 import {
   StyledMobileMenu,

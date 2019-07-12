@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 
 import React, { Component } from 'react';
 import { StyledNav } from './navbar-styles';
-import MobileMenu from '../../mobile-menu/mobile-menu';
-import DesktopNav, { ContentGroup } from '../../desktop-nav/desktop-nav';
+import MobileMenu from '../mobile-menu/mobile-menu';
+import DesktopNav from '../desktop-nav/desktop-nav';
+import { ContentGroup } from '../desktop-nav/desktop-nav-styles';
 import PrimaryDropdown from '../primary-dropdown/primary-dropdown';
 import ColumnDropdown from '../column-dropdown/column-dropdown';
 import IconDropdown from '../icon-dropdown/icon-dropdown';
