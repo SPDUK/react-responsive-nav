@@ -1,53 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import handleLinkClick from '../lib/handleLinkClick';
-
-const StyledPrimaryDropdown = styled.div`
-  height: 100%;
-  padding-top: 10px;
-  span {
-    font-size: 14px;
-    color: rgb(107, 124, 147);
-  }
-  a {
-    color: #6772e5;
-    text-decoration: none;
-  }
-`;
-const StyledPrimaryLink = styled.aside`
-  padding: 0;
-  border: none;
-  outline: none;
-  font: inherit;
-  color: inherit;
-  background: none;
-  cursor: pointer;
-  display: flex;
-  height: 40px;
-  img {
-    height: 17px;
-    width: 17px;
-  }
-  div {
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    h4 {
-      margin: 0;
-      font-size: 16px;
-      text-transform: uppercase;
-    }
-  }
-`;
-
-const StyledPrimaryLinks = styled.div`
-  padding: 20px 30px 0px 30px;
-  display: flex;
-  flex-direction: column;
-  font-size: 19px;
-  font-weight: 600;
-`;
+import handleLinkClick from '../../lib/handleLinkClick';
+import {
+  StyledFooter,
+  StyledFooterLink,
+  StyledFooterTitle,
+  StyledPrimaryDropdown,
+  StyledPrimaryLink,
+  StyledPrimaryLinks
+} from './icon-dropdown-styles';
 
 const createPrimaryLink = ({ link, icon }) => {
   const { href, to } = link.props;
@@ -61,36 +22,6 @@ const createPrimaryLink = ({ link, icon }) => {
   );
 };
 
-const StyledFooterLink = styled.div`
-  display: flex;
-  height: 32px;
-  font-weight: 400;
-  span {
-    width: 100%;
-    font-size: 15px;
-    margin: 0 0 0 27px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-`;
-
-const StyledFooter = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 130px;
-  padding: 20px 35px;
-  font-size: 19px;
-  background-color: rgb(246, 249, 252);
-  img {
-    width: 17px;
-    height: 17px;
-    display: inline-block;
-    height: 100%;
-    vertical-aling: middle;
-  }
-`;
-
 const createFooterLink = link => {
   const { href, to } = link.props;
   return (
@@ -99,16 +30,6 @@ const createFooterLink = link => {
     </StyledFooterLink>
   );
 };
-
-const StyledFooterTitle = styled.div`
-  display: flex;
-  height: 40px;
-  margin-bottom: 20px;
-  h5 {
-    margin: 0 0 0 10px;
-    line-height: 40px;
-  }
-`;
 
 const createFooterTitle = ({ link, icon }) => {
   const { href, to } = link.props;

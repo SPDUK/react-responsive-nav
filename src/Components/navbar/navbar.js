@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 
 import React, { Component } from 'react';
 import { StyledNav } from './navbar-styles';
-import MobileMenu from '../mobile-menu/mobile-menu';
-import DesktopNav, { ContentGroup } from '../desktop-nav/desktop-nav';
-import PrimaryDropdown from '../desktop-nav/primary-dropdown';
-import ColumnDropdown from '../desktop-nav/column-dropdown';
-import IconDropdown from '../desktop-nav/icon-dropdown';
+import MobileMenu from '../../mobile-menu/mobile-menu';
+import DesktopNav, { ContentGroup } from '../../desktop-nav/desktop-nav';
+import PrimaryDropdown from '../primary-dropdown/primary-dropdown';
+import ColumnDropdown from '../column-dropdown/column-dropdown';
+import IconDropdown from '../icon-dropdown/icon-dropdown';
 
 class Navbar extends Component {
   render() {
