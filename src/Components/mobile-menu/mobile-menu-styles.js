@@ -120,7 +120,6 @@ export const StyledModal = styled(ReactModalAdapter)`
     box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3),
       0 -18px 60px -10px rgba(0, 0, 0, 0.025);
     a {
-      color: #6772e5;
       text-decoration: none;
     }
     header {
@@ -148,9 +147,11 @@ export const StyledPrimaryLink = styled.aside`
   border: none;
   outline: none;
   font: inherit;
-  color: inherit;
   background: none;
   cursor: pointer;
+  a {
+    color: ${({ color }) => color || 'rgb(103, 114, 229)'};
+  }
 `;
 
 export const StyledPrimaryLinks = styled.div`

@@ -37,7 +37,11 @@ class MobileMenu extends Component {
   createPrimaryLink = ({ link, icon, color }) => {
     const { href, to } = link.props;
     return (
-      <StyledPrimaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
+      <StyledPrimaryLink
+        color={color}
+        key={Math.random()}
+        onClick={() => handleLinkClick(href, to)}
+      >
         <img src={icon} alt={icon} />
         {link}
       </StyledPrimaryLink>
