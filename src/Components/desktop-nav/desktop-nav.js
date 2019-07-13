@@ -32,7 +32,7 @@ const setFromProps = camelCaseKey => css`
 `;
 
 const GridContainer = styled.div`
-  z-index: 9999;
+  z-index: 999;
   // use visibility hidden instead of display none because menu flashes when breakpoint changes for some reason!
   @media (max-width: ${({ breakpoint }) => breakpoint - 1}px) {
     position: absolute;
@@ -299,9 +299,7 @@ class DesktopNav extends Component {
     debug: false
   };
 
-  /**
-   * Injects index and left properties into MenuData
-   */
+  // Injects index and left properties into MenuData
   memoizeMenuData = memoize((columnWidth, children) =>
     React.Children.map(children, (child, i) => {
       // if width and height are not specified, that means we don't want to render the content group i.e. we only

@@ -15,8 +15,7 @@ class Navbar extends Component {
       primaryDropdown,
       columnDropdown,
       iconDropdown,
-      links,
-      authLink,
+      mobileFooterLinks,
       mobileLinks,
       align,
       columnWidth,
@@ -29,16 +28,17 @@ class Navbar extends Component {
       contentColor,
       contentTop,
       breakpoint,
-      debug
+      debug,
+      children
     } = this.props;
     return (
       <>
         <StyledNav>
-          <h1>{logo}</h1>
+          <a href="/">{logo}</a>
           <MobileMenu
             primaryDropdown={primaryDropdown}
             mobileLinks={mobileLinks}
-            authLink={authLink}
+            mobileFooterLinks={mobileFooterLinks}
           />
         </StyledNav>
         <DesktopNav
@@ -64,6 +64,7 @@ class Navbar extends Component {
           <ContentGroup title={iconDropdown.title} height="442" width="420">
             <IconDropdown iconDropdown={iconDropdown} />
           </ContentGroup>
+          {children || null}
         </DesktopNav>
       </>
     );
@@ -107,10 +108,11 @@ Navbar.propTypes = {
     footerTitle: PropTypes.shape(linkProps),
     footerLinks: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps))
   }),
-  links: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps)).isRequired,
-  authLink: PropTypes.shape({
-    link: PropTypes.object
-  }).isRequired,
+  mobileFooterLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.object
+    })
+  ).isRequired,
   mobileLinks: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps)).isRequired,
   align: PropTypes.string,
   columnWidth: PropTypes.string,

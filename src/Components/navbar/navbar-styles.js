@@ -9,12 +9,14 @@ export const StyledNav = styled.nav`
   top: 0;
   left: 0;
   position: absolute;
-  z-index: 9999;
   height: 60px;
-  h1 {
+  a {
     margin: 0 0 0 20px;
     width: 62px;
     color: #fff;
     line-height: 60px;
+    font-size: 24px;
+    text-decoration: none;
+    z-index: 99999;
   }
 `;

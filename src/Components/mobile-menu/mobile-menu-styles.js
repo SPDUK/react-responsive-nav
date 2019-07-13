@@ -14,6 +14,7 @@ export const StyledMobileMenu = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 999;
   span {
     display: block;
     width: 24px;
@@ -131,7 +132,8 @@ export const StyledModal = styled(ReactModalAdapter)`
     }
     footer {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: space-between;
       font-weight: 800;
       background-color: #f6f9fc;
       height: 40px;

@@ -50,7 +50,7 @@ class MobileMenu extends Component {
 
   render() {
     const { modalIsOpen } = this.state;
-    const { primaryDropdown, mobileLinks, authLink } = this.props;
+    const { primaryDropdown, mobileLinks, mobileFooterLinks } = this.props;
     return (
       <>
         <StyledModal
@@ -68,7 +68,7 @@ class MobileMenu extends Component {
             {primaryDropdown.links.map(this.createPrimaryLink)}
           </StyledPrimaryLinks>
           <StyledMobileLinks>{mobileLinks.map(this.createMobileLink)}</StyledMobileLinks>
-          <footer>{authLink}</footer>
+          <footer>{mobileFooterLinks.map(this.createMobileLink)}</footer>
         </StyledModal>
         <StyledMobileMenu onClick={this.openModal}>
           <span />
@@ -94,9 +94,11 @@ MobileMenu.propTypes = {
     links: PropTypes.arrayOf(PropTypes.shape({ ...linkProps, color: PropTypes.string.isRequired })),
     footerLink: PropTypes.shape(linkProps)
   }).isRequired,
-  authLink: PropTypes.shape({
-    link: PropTypes.object
-  }).isRequired,
+  mobileFooterLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.object
+    })
+  ).isRequired,
   mobileLinks: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps)).isRequired
 };
 
