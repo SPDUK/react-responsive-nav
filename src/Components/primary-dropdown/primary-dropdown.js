@@ -14,7 +14,7 @@ import {
 const createPrimaryLink = ({ link, icon, color, text }) => {
   const { href, to } = link.props;
   return (
-    <StyledPrimaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
+    <StyledPrimaryLink color={color} key={Math.random()} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={icon} />
       <div>
         <h4>{link}</h4>
@@ -27,7 +27,11 @@ const createPrimaryLink = ({ link, icon, color, text }) => {
 const createSecondaryLink = ({ link, icon, color, text }) => {
   const { href, to } = link.props;
   return (
-    <StyledSecondaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
+    <StyledSecondaryLink
+      color={color}
+      key={Math.random()}
+      onClick={() => handleLinkClick(href, to)}
+    >
       <img src={icon} alt={icon} />
       <h5>{link}</h5>
       <span>{text}</span>

@@ -17,7 +17,6 @@ export const StyledPrimaryLink = styled.aside`
   border: none;
   outline: none;
   font: inherit;
-  color: inherit;
   background: none;
   cursor: pointer;
   display: flex;
@@ -25,6 +24,9 @@ export const StyledPrimaryLink = styled.aside`
   img {
     height: 48px;
     width: 48px;
+  }
+  a {
+    color: ${({ color }) => color};
   }
   div {
     margin-left: 10px;
@@ -69,6 +71,9 @@ export const StyledSecondaryLink = styled.div`
   h5 {
     font-size: 16px;
     margin: 0px 10px;
+    a {
+      color: ${({ color }) => color};
+    }
   }
   span {
     padding-top: 2px;
@@ -88,5 +93,8 @@ export const StyledFooter = styled.div`
     width: 17px;
     height: 17px;
     margin: auto 10px auto 0;
+  }
+  a {
+    font-size: 16px;
   }
 `;

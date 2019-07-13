@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { StyledNav } from './navbar-styles';
 import MobileMenu from '../mobile-menu/mobile-menu';
-import DesktopNav, { ContentGroup } from '../desktop-nav/desktop-nav';
-import PrimaryDropdown from '../primary-dropdown/primary-dropdown';
-import ColumnDropdown from '../column-dropdown/column-dropdown';
-import IconDropdown from '../icon-dropdown/icon-dropdown';
+import DesktopNav from '../desktop-nav/desktop-nav';
 
 class Navbar extends Component {
   render() {
@@ -114,7 +111,7 @@ Navbar.propTypes = {
   contentBackground: PropTypes.string,
   contentColor: PropTypes.string,
   contentTop: PropTypes.string,
-  breakpoint: PropTypes.string,
+  breakpoint: PropTypes.number,
   debug: PropTypes.bool
 };
 
