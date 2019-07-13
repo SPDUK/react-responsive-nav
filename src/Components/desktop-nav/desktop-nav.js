@@ -21,8 +21,8 @@ const fadeOutSeconds = 0.34;
 const fadeInSeconds = 0.25;
 const moveSeconds = 0.25;
 const moveArrowSeconds = 0.25;
-const fadeOutContentSeconds = 0.3;
-const fadeInContentSeconds = 0.35;
+const fadeOutContentSeconds = 0.25;
+const fadeInContentSeconds = 0.25;
 const OffScreenPadding = 10;
 
 const setFromProps = camelCaseKey => css`
@@ -126,6 +126,7 @@ const FadeOut = keyframes`
 `;
 const MovingDiv = styled.div`
   opacity: 1;
+  overflow: hidden;
   ${setFromProps('color')};
   ${setFromProps('background')};
   position: absolute;
@@ -153,7 +154,7 @@ const MovingDiv = styled.div`
       }
       return '0s'; // display: none; don't animate
     }}
-    forwards ease;
+    forwards ease-out;
 `;
 const FadeInArrow = keyframes`
   from {
@@ -228,7 +229,7 @@ const Arrow = styled.div`
     return '0s'; // display: none; don't animate
   }}
   
-  forwards ease;
+  forwards ease-out;
 `;
 const FadeInContent = keyframes`
   from {
@@ -243,7 +244,7 @@ const FadeOutContent = keyframes`
   from {
     opacity: 1;
   }
-  
+
   to {
     opacity: 0;
     visibility: hidden;
