@@ -12,11 +12,11 @@ export const StyledNav = styled.nav`
   height: 60px;
   a {
     margin: 0 0 0 20px;
-    width: 62px;
     color: #fff;
     line-height: 60px;
     font-size: 24px;
     text-decoration: none;
     z-index: 99999;
+    font-weight: 700;
   }
 `;
