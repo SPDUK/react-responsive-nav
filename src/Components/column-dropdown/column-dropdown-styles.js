@@ -24,8 +24,7 @@ export const StyledPrimaryLink = styled.aside`
   display: flex;
   height: 70px;
   img {
-    margin-top: 5px;
-    height: 17px;
+    height: 22px;
     width: 17px;
   }
   div {
@@ -49,7 +48,7 @@ export const StyledFooter = styled.div`
   background-color: rgb(246, 249, 252);
   img {
     width: 17px;
-    height: 17px;
+    height: 22px;
     margin: 8.75px 10px 0 0;
   }
   aside {

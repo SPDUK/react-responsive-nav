@@ -23,7 +23,7 @@ export const StyledPrimaryLink = styled.aside`
   display: flex;
   height: 40px;
   img {
-    height: 17px;
+    height: 22px;
     width: 17px;
   }
   div {
@@ -67,21 +67,20 @@ export const StyledFooter = styled.div`
   padding: 20px 35px;
   font-size: 19px;
   background-color: rgb(246, 249, 252);
-  img {
-    width: 17px;
-    height: 17px;
-    display: inline-block;
-    height: 100%;
-    vertical-aling: middle;
-  }
 `;
 
 export const StyledFooterTitle = styled.div`
   display: flex;
-  height: 40px;
+  height: 32px;
   margin-bottom: 20px;
+  display: flex;
   h5 {
+    height: 27px;
     margin: 0 0 0 10px;
-    line-height: 40px;
+    line-height: 27px;
+  }
+  img {
+    width: 17px;
+    height: 27px;
   }
 `;
