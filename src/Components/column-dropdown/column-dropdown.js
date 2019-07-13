@@ -53,9 +53,9 @@ const createColumnLink = link => {
 };
 
 const ColumnDropdown = ({
-  columnDropdown: { primaryLink, firstColumn, secondColumn, footerLinks }
+  columnDropdown: { primaryLink, firstColumn, secondColumn, footerLinks, color }
 }) => (
-  <StyledColumnDropdown>
+  <StyledColumnDropdown color={color}>
     <StyledLinks>
       {createPrimaryDropdownLink(primaryLink)}
       <StyledColumnDropdownColumns>
@@ -76,6 +76,7 @@ const ColumnDropdown = ({
 ColumnDropdown.propTypes = {
   columnDropdown: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    color: PropTypes.string,
     primaryLink: PropTypes.shape({
       link: PropTypes.object,
       icon: PropTypes.string,
@@ -94,4 +95,5 @@ ColumnDropdown.propTypes = {
     )
   })
 };
+
 export default ColumnDropdown;

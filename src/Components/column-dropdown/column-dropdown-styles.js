@@ -7,8 +7,9 @@ export const StyledColumnDropdown = styled.div`
     font-size: 14px;
     color: rgb(107, 124, 147);
   }
+  // for some reason defaultProps isn't working correctly
   a {
-    color: #6772e5;
+    color: ${({ color }) => color || '#6772e5'};
     text-decoration: none;
   }
 `;
