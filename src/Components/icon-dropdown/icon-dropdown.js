@@ -41,8 +41,8 @@ const createFooterTitle = ({ link, icon }) => {
   );
 };
 
-const IconDropdown = ({ iconDropdown: { links, footerTitle, footerLinks } }) => (
-  <StyledPrimaryDropdown>
+const IconDropdown = ({ iconDropdown: { links, footerTitle, footerLinks, color } }) => (
+  <StyledPrimaryDropdown color={color}>
     <StyledPrimaryLinks>{links.map(createPrimaryLink)}</StyledPrimaryLinks>
     <StyledFooter>
       {createFooterTitle(footerTitle)}
@@ -54,6 +54,7 @@ const IconDropdown = ({ iconDropdown: { links, footerTitle, footerLinks } }) => 
 IconDropdown.propTypes = {
   iconDropdown: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    color: PropTypes.string,
     links: PropTypes.arrayOf(PropTypes.shape({ link: PropTypes.object, icon: PropTypes.string })),
     footerTitle: PropTypes.shape({ link: PropTypes.object, icon: PropTypes.string }),
     footerLinks: PropTypes.arrayOf(PropTypes.shape({ link: PropTypes.object }))

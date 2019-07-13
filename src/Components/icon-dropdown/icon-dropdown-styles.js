@@ -8,7 +8,7 @@ export const StyledPrimaryDropdown = styled.div`
     color: rgb(107, 124, 147);
   }
   a {
-    color: #6772e5;
+    color: ${({ color }) => color || '#6772e5'};
     text-decoration: none;
   }
 `;
