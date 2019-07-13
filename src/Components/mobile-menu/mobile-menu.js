@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import handleLinkClick from '../../lib/handleLinkClick';
-
 import {
   StyledMobileMenu,
   StyledModal,
@@ -14,9 +13,15 @@ import {
 
 Modal.setAppElement('#root');
 
+const defaultBreakpoint = 670;
+
 class MobileMenu extends Component {
   state = {
     modalIsOpen: false
+  };
+
+  static defaultProps = {
+    breakpoint: defaultBreakpoint
   };
 
   openModal = () => {
@@ -50,7 +55,7 @@ class MobileMenu extends Component {
 
   render() {
     const { modalIsOpen } = this.state;
-    const { primaryDropdown, mobileLinks, mobileFooterLinks } = this.props;
+    const { primaryDropdown, mobileLinks, mobileFooterLinks, breakpoint } = this.props;
     return (
       <>
         <StyledModal
@@ -70,7 +75,7 @@ class MobileMenu extends Component {
           <StyledMobileLinks>{mobileLinks.map(this.createMobileLink)}</StyledMobileLinks>
           <footer>{mobileFooterLinks.map(this.createMobileLink)}</footer>
         </StyledModal>
-        <StyledMobileMenu onClick={this.openModal}>
+        <StyledMobileMenu breakpoint={breakpoint} onClick={this.openModal}>
           <span />
           <span />
           <span />
@@ -99,7 +104,8 @@ MobileMenu.propTypes = {
       link: PropTypes.object
     })
   ).isRequired,
-  mobileLinks: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps)).isRequired
+  mobileLinks: PropTypes.arrayOf(PropTypes.shape(linkWithoutIconProps)).isRequired,
+  breakpoint: PropTypes.number
 };
 
 export default MobileMenu;

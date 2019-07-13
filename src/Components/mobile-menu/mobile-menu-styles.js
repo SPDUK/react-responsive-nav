@@ -28,7 +28,7 @@ export const StyledMobileMenu = styled.button`
       margin-top: 6px;
     }
   }
-  @media (min-width: 670px) {
+  @media (min-width: ${({ breakpoint }) => breakpoint}px) {
     display: none;
   }
 `;

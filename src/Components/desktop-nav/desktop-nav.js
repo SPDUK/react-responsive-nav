@@ -15,10 +15,8 @@ const defaultContentColor = '#323232';
 const defaultContentWidth = 320;
 const defaultContentHeight = 200;
 const defaultContentTop = 0;
-
 const arrowHeight = 8;
 const perspective = 4000;
-
 const fadeOutSeconds = 0.34;
 const fadeInSeconds = 0.25;
 const moveSeconds = 0.25;

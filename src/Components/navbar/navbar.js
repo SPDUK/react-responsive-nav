@@ -13,8 +13,6 @@ class Navbar extends Component {
     const {
       logo,
       primaryDropdown,
-      columnDropdown,
-      iconDropdown,
       mobileFooterLinks,
       mobileLinks,
       align,
@@ -39,6 +37,7 @@ class Navbar extends Component {
             primaryDropdown={primaryDropdown}
             mobileLinks={mobileLinks}
             mobileFooterLinks={mobileFooterLinks}
+            breakpoint={breakpoint}
           />
         </StyledNav>
         <DesktopNav
@@ -55,15 +54,6 @@ class Navbar extends Component {
           breakpoint={breakpoint}
           debug={debug}
         >
-          <ContentGroup title={primaryDropdown.title} height="630" width="495">
-            <PrimaryDropdown primaryDropdown={primaryDropdown} />
-          </ContentGroup>
-          <ContentGroup title={columnDropdown.title} height="408" width="440">
-            <ColumnDropdown columnDropdown={columnDropdown} />
-          </ContentGroup>
-          <ContentGroup title={iconDropdown.title} height="442" width="420">
-            <IconDropdown iconDropdown={iconDropdown} />
-          </ContentGroup>
           {children || null}
         </DesktopNav>
       </>
