@@ -276,7 +276,7 @@ export const ContentGroup = ({ title, width, height, background }) => (
   </>
 );
 
-class SiteNav extends Component {
+class DesktopNav extends Component {
   state = {
     display: 'none',
     fadeOut: false,
@@ -405,9 +405,9 @@ class SiteNav extends Component {
         // off screen detection
         // target is rootGridItem
         const { left, width } = target.getBoundingClientRect();
-        const siteNavWidth = target.parentNode.clientWidth;
+        const DesktopNavWidth = target.parentNode.clientWidth;
         leftOffset = toData.width / 2 - (left + width / 2);
-        rightOffset = toData.width / 2 - (siteNavWidth - (left + width / 2));
+        rightOffset = toData.width / 2 - (DesktopNavWidth - (left + width / 2));
 
         if (leftOffset > 0) {
           // if off screen, toData.left needs to be moved to be on-screen!
@@ -514,7 +514,7 @@ class SiteNav extends Component {
   }
 }
 
-SiteNav.propTypes = {
+DesktopNav.propTypes = {
   columnWidth: PropTypes.string,
   rowHeight: PropTypes.number,
   background: PropTypes.string,
@@ -530,4 +530,4 @@ SiteNav.propTypes = {
   debug: PropTypes.bool
 };
 
-export default SiteNav;
+export default DesktopNav;
