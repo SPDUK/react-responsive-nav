@@ -1,4 +1,4 @@
-import Navbar from './components/navbar/navbar.js';
+import Navbar from './Components/navbar/navbar.js';
 import { ContentGroup } from './Components/desktop-nav/desktop-nav';
 import PrimaryDropdown from './Components/primary-dropdown/primary-dropdown';
 import IconDropdown from './Components/icon-dropdown/icon-dropdown';
