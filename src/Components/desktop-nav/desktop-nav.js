@@ -136,7 +136,8 @@ const MovingDiv = styled.div`
   height: ${({ fromData }) => (fromData ? fromData.height : 0)}px;
   display: ${({ display }) => display};
   border-radius: 4px;
-  box-shadow: 0 8px 28px 1px rgba(138, 126, 138, 0.67); // Ripped from: https://www.cssmatic.com/box-shadow
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3),
+    0 -18px 60px -10px rgba(0, 0, 0, 0.025);
   animation: ${({ fadeOut, display, fromData, toData }) => {
       if (fadeOut) return FadeOut;
       if (display === 'block') {
