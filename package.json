@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-nav",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A responsive react navbar in the style of stripe.com",
   "main": "build/index.js",
   "peerDependencies": {
