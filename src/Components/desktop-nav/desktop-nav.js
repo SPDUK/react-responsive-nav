@@ -48,8 +48,6 @@ const GridContainer = styled.div`
     position: relative;
     ${setFromProps('background')};
     ${setFromProps('color')};
-    ${setFromProps('fontFamily')};
-    ${setFromProps('fontSize')}px;
   }
 `;
 const GridItemLink = styled.a`
@@ -455,8 +453,6 @@ class DesktopNav extends Component {
       contentTop,
       children,
       align,
-      fontSize,
-      fontFamily,
       color,
       breakpoint
     } = this.props;
@@ -473,8 +469,6 @@ class DesktopNav extends Component {
         columnWidth={columnWidth}
         rowHeight={rowHeight}
         justifyContent={justifyContent}
-        fontSize={fontSize}
-        fontFamily={fontFamily}
         color={color}
         breakpoint={breakpoint}
         /* Below are not configurable */
@@ -521,8 +515,6 @@ DesktopNav.propTypes = {
   contentTop: PropTypes.number,
   children: PropTypes.arrayOf(PropTypes.node),
   align: PropTypes.string,
-  fontSize: PropTypes.string,
-  fontFamily: PropTypes.string,
   color: PropTypes.string,
   breakpoint: PropTypes.number,
   debug: PropTypes.bool

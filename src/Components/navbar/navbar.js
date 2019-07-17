@@ -17,8 +17,6 @@ class Navbar extends Component {
       rowHeight,
       background,
       color,
-      fontSize,
-      fontFamily,
       contentBackground,
       contentColor,
       contentTop,
@@ -43,15 +41,13 @@ class Navbar extends Component {
           rowHeight={rowHeight}
           background={background}
           color={color}
-          fontSize={fontSize}
-          fontFamily={fontFamily}
           contentBackground={contentBackground}
           contentColor={contentColor}
           contentTop={contentTop}
           breakpoint={breakpoint}
           debug={debug}
         >
-          {children || null}
+          {children}
         </DesktopNav>
       </>
     );
@@ -106,8 +102,6 @@ Navbar.propTypes = {
   rowHeight: PropTypes.string,
   background: PropTypes.string,
   color: PropTypes.string,
-  fontSize: PropTypes.string,
-  fontFamily: PropTypes.string,
   contentBackground: PropTypes.string,
   contentColor: PropTypes.string,
   contentTop: PropTypes.string,
