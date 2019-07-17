@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import handleLinkClick from '../../lib/handleLinkClick';
 import {
   StyledFooter,
@@ -14,7 +13,7 @@ import {
 const createPrimaryLink = ({ link, icon, color, text }) => {
   const { href, to } = link.props;
   return (
-    <StyledPrimaryLink color={color} key={Math.random()} onClick={() => handleLinkClick(href, to)}>
+    <StyledPrimaryLink color={color} key={href || to} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={icon} />
       <div>
         <h4>{link}</h4>
@@ -27,11 +26,7 @@ const createPrimaryLink = ({ link, icon, color, text }) => {
 const createSecondaryLink = ({ link, icon, color, text }) => {
   const { href, to } = link.props;
   return (
-    <StyledSecondaryLink
-      color={color}
-      key={Math.random()}
-      onClick={() => handleLinkClick(href, to)}
-    >
+    <StyledSecondaryLink color={color} key={href || to} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={icon} />
       <h5>{link}</h5>
       <span>{text}</span>
@@ -45,7 +40,7 @@ const PrimaryDropdown = ({ primaryDropdown: { links, footerLink } }) => (
     <StyledSecondaryLinks>{links.slice(3).map(createSecondaryLink)}</StyledSecondaryLinks>
     <StyledFooter>
       <img src={footerLink.icon} alt={footerLink.link} />
-      {footerLink.link}
+      <div>{footerLink.link}</div>
     </StyledFooter>
   </StyledPrimaryDropdown>
 );
@@ -57,7 +52,8 @@ PrimaryDropdown.propTypes = {
       PropTypes.shape({
         link: PropTypes.object,
         icon: PropTypes.string,
-        color: PropTypes.string
+        color: PropTypes.string,
+        text: PropTypes.string
       })
     ).isRequired,
     footerLink: PropTypes.shape({ icon: PropTypes.string, link: PropTypes.object }).isRequired

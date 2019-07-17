@@ -14,7 +14,7 @@ import {
 const createPrimaryDropdownLink = ({ link, icon, subtitle }) => {
   const { href, to } = link.props;
   return (
-    <StyledPrimaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
+    <StyledPrimaryLink key={href || to} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={icon} />
       <div>
         <h4>{link}</h4>
@@ -27,7 +27,7 @@ const createPrimaryDropdownLink = ({ link, icon, subtitle }) => {
 const createFooterLink = ({ link, icon }) => {
   const { href, to } = link.props;
   return (
-    <StyledPrimaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
+    <StyledPrimaryLink key={href || to} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={icon} />
       <div>
         <h4>{link}</h4>
@@ -44,7 +44,7 @@ const createColumnLink = link => {
       role="link"
       tabIndex={-1}
       onKeyPress={() => handleLinkClick(href, to)}
-      key={Math.random()}
+      key={href || to}
       onClick={() => handleLinkClick(href, to)}
     >
       {link}

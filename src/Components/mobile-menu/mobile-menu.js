@@ -37,11 +37,7 @@ class MobileMenu extends Component {
   createPrimaryLink = ({ link, icon, color }) => {
     const { href, to } = link.props;
     return (
-      <StyledPrimaryLink
-        color={color}
-        key={Math.random()}
-        onClick={() => handleLinkClick(href, to)}
-      >
+      <StyledPrimaryLink color={color} key={href || to} onClick={() => handleLinkClick(href, to)}>
         <img src={icon} alt={icon} />
         {link}
       </StyledPrimaryLink>
@@ -51,7 +47,7 @@ class MobileMenu extends Component {
   createMobileLink = link => {
     const { href, to } = link.props;
     return (
-      <StyledPrimaryLink onClick={() => handleLinkClick(href, to)} key={Math.random()}>
+      <StyledPrimaryLink onClick={() => handleLinkClick(href, to)} key={href || to}>
         {link}
       </StyledPrimaryLink>
     );

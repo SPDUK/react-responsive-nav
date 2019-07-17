@@ -13,7 +13,7 @@ import {
 const createPrimaryLink = ({ link, icon }) => {
   const { href, to } = link.props;
   return (
-    <StyledPrimaryLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
+    <StyledPrimaryLink key={href || to} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={icon} />
       <div>
         <h4>{link}</h4>
@@ -25,7 +25,7 @@ const createPrimaryLink = ({ link, icon }) => {
 const createFooterLink = link => {
   const { href, to } = link.props;
   return (
-    <StyledFooterLink key={Math.random()} onClick={() => handleLinkClick(href, to)}>
+    <StyledFooterLink key={href || to} onClick={() => handleLinkClick(href, to)}>
       <span>{link}</span>
     </StyledFooterLink>
   );
@@ -34,7 +34,7 @@ const createFooterLink = link => {
 const createFooterTitle = ({ link, icon }) => {
   const { href, to } = link.props;
   return (
-    <StyledFooterTitle key={Math.random()} onClick={() => handleLinkClick(href, to)}>
+    <StyledFooterTitle key={href || to} onClick={() => handleLinkClick(href, to)}>
       <img src={icon} alt={link} />
       <h5>{link}</h5>
     </StyledFooterTitle>
