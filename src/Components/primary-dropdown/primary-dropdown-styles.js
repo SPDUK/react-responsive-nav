@@ -11,6 +11,13 @@ export const StyledPrimaryDropdown = styled.div`
     color: #6772e5;
     text-decoration: none;
   }
+  aside {
+    transition: filter 0.1s ease-out;
+    &: hover {
+      filter: grayscale(90%) brightness(50%);
+    }
+    cursor: pointer;
+  }
 `;
 export const StyledPrimaryLink = styled.aside`
   padding: 0;
@@ -58,7 +65,7 @@ export const StyledSecondaryLinks = styled.div`
   border-bottom: 2px solid #fff;
 `;
 
-export const StyledSecondaryLink = styled.div`
+export const StyledSecondaryLink = styled.aside`
   display: flex;
   height: 50px;
   flex-direction: row;
@@ -81,8 +88,7 @@ export const StyledSecondaryLink = styled.div`
 `;
 
 export const StyledFooter = styled.div`
-  display: flex;
-  justify-content: center;
+
   height: 50px;
   padding: 18px 35px;
   font-size: 19px;
@@ -96,5 +102,9 @@ export const StyledFooter = styled.div`
   }
   a {
     font-size: 16px;
+  }
+  aside {
+    display: flex;
+    justify-content: center;
   }
 `;

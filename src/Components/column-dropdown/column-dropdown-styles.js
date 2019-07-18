@@ -12,6 +12,13 @@ export const StyledColumnDropdown = styled.div`
     color: ${({ color }) => color || '#6772e5'};
     text-decoration: none;
   }
+  aside {
+    transition: filter 0.1s ease-out;
+    &: hover {
+      filter: grayscale(90%) brightness(50%);
+    }
+    cursor: pointer;
+  }
 `;
 export const StyledPrimaryLink = styled.aside`
   padding: 0;
@@ -70,6 +77,12 @@ export const StyledColumnDropdownColumn = styled.div`
   }
   span {
     font-weight: 600;
+  }
+  a {
+    transition: filter 0.1s ease-out;
+    &: hover {
+      filter: grayscale(90%) brightness(50%);
+    }
   }
 `;
 

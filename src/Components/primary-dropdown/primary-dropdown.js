@@ -39,8 +39,10 @@ const PrimaryDropdown = ({ primaryDropdown: { links, footerLink } }) => (
     <StyledPrimaryLinks>{links.slice(0, 3).map(createPrimaryLink)}</StyledPrimaryLinks>
     <StyledSecondaryLinks>{links.slice(3).map(createSecondaryLink)}</StyledSecondaryLinks>
     <StyledFooter>
-      <img src={footerLink.icon} alt={footerLink.link} />
-      <div>{footerLink.link}</div>
+      <aside>
+        <img src={footerLink.icon} alt={footerLink.icon} />
+        <div>{footerLink.link}</div>
+      </aside>
     </StyledFooter>
   </StyledPrimaryDropdown>
 );
