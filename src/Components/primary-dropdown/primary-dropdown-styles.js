@@ -11,7 +11,7 @@ export const StyledPrimaryDropdown = styled.div`
     color: #6772e5;
     text-decoration: none;
   }
-  aside {
+  li {
     transition: filter 0.1s ease-out;
     &: hover {
       filter: grayscale(90%) brightness(50%);
@@ -19,7 +19,7 @@ export const StyledPrimaryDropdown = styled.div`
     cursor: pointer;
   }
 `;
-export const StyledPrimaryLink = styled.aside`
+export const StyledPrimaryLink = styled.li`
   padding: 0;
   border: none;
   outline: none;
@@ -47,15 +47,17 @@ export const StyledPrimaryLink = styled.aside`
   }
 `;
 
-export const StyledPrimaryLinks = styled.div`
+export const StyledPrimaryLinks = styled.ul`
   padding: 20px 30px 0px 30px;
   display: flex;
   flex-direction: column;
   font-size: 19px;
   font-weight: 600;
+  list-style-type: none;
+  margin: 0;
 `;
 
-export const StyledSecondaryLinks = styled.div`
+export const StyledSecondaryLinks = styled.ul`
   padding: 20px 30px 0px 30px;
   display: flex;
   flex-direction: column;
@@ -63,9 +65,11 @@ export const StyledSecondaryLinks = styled.div`
   font-weight: 600;
   background-color: rgb(246, 249, 252);
   border-bottom: 2px solid #fff;
+  list-style-type: none;
+  margin: 0;
 `;
 
-export const StyledSecondaryLink = styled.aside`
+export const StyledSecondaryLink = styled.li`
   display: flex;
   height: 50px;
   flex-direction: row;
@@ -87,14 +91,15 @@ export const StyledSecondaryLink = styled.aside`
   }
 `;
 
-export const StyledFooter = styled.div`
-
+export const StyledFooter = styled.ul`
   height: 50px;
   padding: 18px 35px;
   font-size: 19px;
   font-weight: 700
   background-color: rgb(246, 249, 252);
   line-height: 50px;
+  list-style-type: none;
+  margin: 0;
   img {
     width: 17px;
     height: 17px;
@@ -103,7 +108,7 @@ export const StyledFooter = styled.div`
   a {
     font-size: 16px;
   }
-  aside {
+  li {
     display: flex;
     justify-content: center;
   }
