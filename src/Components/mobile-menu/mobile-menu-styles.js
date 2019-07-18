@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 export const StyledMobileMenu = styled.button`
   background: none;
   outline: none;
-  border: none;
+  border: 0;
   height: 60px;
   width: 49px;
   user-select: none;
@@ -16,6 +16,10 @@ export const StyledMobileMenu = styled.button`
   justify-content: center;
   z-index: 999;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  &::-moz-focus-inner {
+    border: 0;
+  }
   span {
     display: block;
     width: 24px;
@@ -43,6 +47,10 @@ export const StyledClose = styled.a`
   height: 50px;
   opacity: 1;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  &::-moz-focus-inner {
+    border: 0;
+  }
   &:hover {
     &:before,
     &:after {
