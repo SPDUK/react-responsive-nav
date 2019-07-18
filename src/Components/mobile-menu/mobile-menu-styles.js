@@ -15,6 +15,7 @@ export const StyledMobileMenu = styled.button`
   flex-direction: column;
   justify-content: center;
   z-index: 999;
+  cursor: pointer;
   span {
     display: block;
     width: 24px;
@@ -28,6 +29,7 @@ export const StyledMobileMenu = styled.button`
       margin-top: 6px;
     }
   }
+
   @media (min-width: ${({ breakpoint }) => breakpoint}px) {
     display: none;
   }
@@ -40,6 +42,7 @@ export const StyledClose = styled.a`
   width: 50px;
   height: 50px;
   opacity: 1;
+  cursor: pointer;
   &:hover {
     &:before,
     &:after {
@@ -129,20 +132,34 @@ export const StyledModal = styled(ReactModalAdapter)`
       color: #8898aa;
       font-size: 13px;
     }
+
+    ul li {
+      transition: filter 0.1s ease-out;
+      &:hover {
+        filter: grayscale(90%) brightness(50%);
+      }
+      cursor: pointer;
+    }
+
     footer {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
       font-weight: 800;
       background-color: #f6f9fc;
       height: 40px;
       line-height: 40px;
       padding: 12px 30px;
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
   }
 `;
 
-export const StyledPrimaryLink = styled.aside`
+export const StyledPrimaryLink = styled.li`
   padding: 0;
   border: none;
   outline: none;
@@ -154,14 +171,16 @@ export const StyledPrimaryLink = styled.aside`
   }
 `;
 
-export const StyledPrimaryLinks = styled.div`
+export const StyledPrimaryLinks = styled.ul`
   padding: 20px 30px 0px 30px;
   display: flex;
   flex-direction: column;
   border-bottom: 2px solid rgb(246, 249, 252);
   font-size: 19px;
   font-weight: 600;
-  aside {
+  list-style-type: none;
+  margin: 0;
+  li {
     display: flex;
     justify-content: flex-start;
     height: 50px;
@@ -175,23 +194,25 @@ export const StyledPrimaryLinks = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     width: calc(100% - 60px);
-    aside {
+    li {
       flex: 50%;
     }
   }
 `;
-export const StyledMobileLinks = styled.div`
+export const StyledMobileLinks = styled.ul`
   padding: 10px 30px;
   display: flex;
   flex-direction: column;
   font-size: 16px;
   font-weight: 400;
   line-height: 40px;
+  list-style-type: none;
+  margin: 0;
   @media (min-width: 360px) {
     flex-direction: row;
     flex-wrap: wrap;
     width: calc(100% - 60px);
-    aside {
+    li {
       flex: 50%;
     }
   }

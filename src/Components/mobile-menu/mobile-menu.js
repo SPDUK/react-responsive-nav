@@ -73,7 +73,9 @@ class MobileMenu extends Component {
             {primaryDropdown.links.map(this.createPrimaryLink)}
           </StyledPrimaryLinks>
           <StyledMobileLinks>{mobileLinks.map(this.createMobileLink)}</StyledMobileLinks>
-          <footer>{mobileFooterLinks.map(this.createMobileLink)}</footer>
+          <footer>
+            <ul>{mobileFooterLinks.map(this.createMobileLink)}</ul>
+          </footer>
         </StyledModal>
         <StyledMobileMenu breakpoint={breakpoint} onClick={this.openModal}>
           <span />
