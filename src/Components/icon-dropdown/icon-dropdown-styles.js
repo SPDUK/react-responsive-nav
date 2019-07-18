@@ -11,7 +11,7 @@ export const StyledPrimaryDropdown = styled.div`
     color: ${({ color }) => color || '#6772e5'};
     text-decoration: none;
   }
-  aside {
+  li {
     transition: filter 0.1s ease-out;
     &: hover {
       filter: grayscale(90%) brightness(50%);
@@ -19,7 +19,7 @@ export const StyledPrimaryDropdown = styled.div`
     cursor: pointer;
   }
 `;
-export const StyledPrimaryLink = styled.aside`
+export const StyledPrimaryLink = styled.li`
   padding: 0;
   border: none;
   outline: none;
@@ -45,15 +45,17 @@ export const StyledPrimaryLink = styled.aside`
   }
 `;
 
-export const StyledPrimaryLinks = styled.div`
+export const StyledPrimaryLinks = styled.ul`
   padding: 20px 30px 0px 30px;
   display: flex;
   flex-direction: column;
   font-size: 19px;
   font-weight: 600;
+  list-style-type: none;
+  margin: 0;
 `;
 
-export const StyledFooterLink = styled.aside`
+export const StyledFooterLink = styled.li`
   display: flex;
   height: 32px;
   font-weight: 400;
@@ -67,16 +69,18 @@ export const StyledFooterLink = styled.aside`
   }
 `;
 
-export const StyledFooter = styled.div`
+export const StyledFooter = styled.ul`
   display: flex;
   flex-direction: column;
   height: 130px;
   padding: 20px 35px;
   font-size: 19px;
   background-color: rgb(246, 249, 252);
+  list-style-type: none;
+  margin: 0;
 `;
 
-export const StyledFooterTitle = styled.aside`
+export const StyledFooterTitle = styled.li`
   display: flex;
   height: 32px;
   margin-bottom: 20px;
