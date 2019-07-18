@@ -34,10 +34,15 @@ class MobileMenu extends Component {
     this.setState({ modalIsOpen: false });
   };
 
+  handleClick = (href, to) => {
+    handleLinkClick(href, to);
+    this.closeModal();
+  };
+
   createPrimaryLink = ({ link, icon, color }) => {
     const { href, to } = link.props;
     return (
-      <StyledPrimaryLink color={color} key={href || to} onClick={() => handleLinkClick(href, to)}>
+      <StyledPrimaryLink color={color} key={href || to} onClick={() => this.handleClick(href, to)}>
         <img src={icon} alt={icon} />
         {link}
       </StyledPrimaryLink>
@@ -47,7 +52,7 @@ class MobileMenu extends Component {
   createMobileLink = link => {
     const { href, to } = link.props;
     return (
-      <StyledPrimaryLink onClick={() => handleLinkClick(href, to)} key={href || to}>
+      <StyledPrimaryLink onClick={() => this.handleClick(href, to)} key={href || to}>
         {link}
       </StyledPrimaryLink>
     );
