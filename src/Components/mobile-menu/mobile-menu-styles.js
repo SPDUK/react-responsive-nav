@@ -90,6 +90,13 @@ function ReactModalAdapter({ className, ...props }) {
 }
 
 export const StyledModal = styled(ReactModalAdapter)`
+  &__overlay,
+  &__content {
+    @media (min-width: ${({ breakpoint }) => breakpoint}px) {
+      display: none;
+    }
+  }
+
   &__overlay {
     transition: 0.15s ease-out;
     position: fixed;

@@ -28,8 +28,6 @@ class MobileMenu extends Component {
     this.setState({ modalIsOpen: true });
   };
 
-  afterOpenModal = () => {};
-
   closeModal = () => {
     this.setState({ modalIsOpen: false });
   };
@@ -71,6 +69,7 @@ class MobileMenu extends Component {
           className="Modal"
           modalClassname="Overlay"
           closeTimeoutMS={150}
+          breakpoint={breakpoint}
         >
           <StyledClose onClick={this.closeModal} />
           <header>{primaryDropdown.title}</header>
