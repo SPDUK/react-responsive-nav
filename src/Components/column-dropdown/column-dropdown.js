@@ -39,7 +39,7 @@ const createFooterLink = ({ link, icon }) => {
 const createColumnLink = link => {
   const { href, to } = link.props;
   return (
-    <div
+    <li
       type="link"
       role="link"
       tabIndex={-1}
@@ -48,7 +48,7 @@ const createColumnLink = link => {
       onClick={() => handleLinkClick(href, to)}
     >
       {link}
-    </div>
+    </li>
   );
 };
 

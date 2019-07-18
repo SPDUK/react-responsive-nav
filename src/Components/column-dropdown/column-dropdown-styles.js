@@ -12,7 +12,7 @@ export const StyledColumnDropdown = styled.div`
     color: ${({ color }) => color || '#6772e5'};
     text-decoration: none;
   }
-  aside {
+  li {
     transition: filter 0.1s ease-out;
     &: hover {
       filter: grayscale(90%) brightness(50%);
@@ -20,7 +20,7 @@ export const StyledColumnDropdown = styled.div`
     cursor: pointer;
   }
 `;
-export const StyledPrimaryLink = styled.aside`
+export const StyledPrimaryLink = styled.li`
   padding: 0;
   border: none;
   outline: none;
@@ -46,29 +46,35 @@ export const StyledPrimaryLink = styled.aside`
   }
 `;
 
-export const StyledFooter = styled.div`
+export const StyledFooter = styled.ul`
   display: flex;
   flex-direction: column;
   padding: 18px 35px;
   font-size: 19px;
   font-weight: 700
   background-color: rgb(246, 249, 252);
+  list-style-type: none;
+  margin: 0;
   img {
     width: 17px;
     height: 22px;
     margin: 8.75px 10px 0 0;
   }
-  aside {
+  li {
     height: 40px;
     line-height: 40px;
   }
 `;
 
-export const StyledColumnDropdownColumn = styled.div`
+export const StyledColumnDropdownColumn = styled.ul`
   display: flex;
   flex-direction: column;
   flex: 50%;
   height: 130px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
   span,
   a {
     margin: 2.5px 0;
@@ -77,12 +83,6 @@ export const StyledColumnDropdownColumn = styled.div`
   }
   span {
     font-weight: 600;
-  }
-  a {
-    transition: filter 0.1s ease-out;
-    &: hover {
-      filter: grayscale(90%) brightness(50%);
-    }
   }
 `;
 
