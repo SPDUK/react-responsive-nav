@@ -281,7 +281,8 @@ class DesktopNav extends Component {
     fromData: null,
     toData: null,
     leftOffset: 0,
-    rightOffset: 0
+    rightOffset: 0,
+    lastTarget: null
   };
 
   static defaultProps = {
@@ -383,10 +384,19 @@ class DesktopNav extends Component {
 
   close = () => {
     if (this.props.debug) return;
-    this.setState(prevState => ({ fadeOut: true, fromData: prevState.toData }));
+    this.setState(prevState => ({
+      fadeOut: true,
+      fromData: prevState.toData,
+      lastTarget: null
+    }));
   };
 
   onMouseEnter = (target, menuDataIndex) => {
+    const { lastTarget } = this.state;
+
+    // if the last opened dropdown is the same as the one we're trying to open, don't do anything
+    // stops dropdowns sometimes flickering open and close when hovering from the dropdown to the nav item
+    if (lastTarget && lastTarget === target) return;
     this.setState(prevState => {
       const fadeOut = false;
       const display = 'block';
@@ -433,7 +443,8 @@ class DesktopNav extends Component {
           fromData,
           toData,
           leftOffset,
-          rightOffset
+          rightOffset,
+          lastTarget: target
         };
       }
     });
