@@ -1,18 +1,12 @@
 # react-responsive-nav
+If you're wondering how to use this:
 
-Styling the navbar fonts:
+See a working example on [CodeSandbox](https://codesandbox.io/s/tender-paper-og7p4?file=/src/App.js)
 
-```css
-nav {
-  font-family: 'Open Sans', sans-serif;
-}
-nav h1 {
-  font-family: 'Catamaran', sans-serif;
-  font-weight: 800;
-}
-```
+Or a [code example on GitHub](https://github.com/SPDUK/react-responsive-nav-example)
 
----
+___
+
 
 # Development
 
